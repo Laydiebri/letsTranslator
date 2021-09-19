@@ -1,0 +1,132 @@
+.div-b{
+    position:absolute;
+    left: 25px;
+    width: 1450px;
+    height: 750px;
+    border-radius: 50px;
+    border: 10px solid greenyellow;
+    background-image: url("https://www.animatedimages.org/data/media/276/animated-school-image-0018.gif");
+    background-repeat: no-repeat;
+}
+
+#div-c{
+    display: flex;
+    height: 750px;
+    width: 1450px; 
+}
+#div-c> div{
+   
+    color: green;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 100px;
+    height: 600px;
+}
+.div-d{
+    position:absolute;
+    left: 25px;
+    width: 1450px;
+    height: 750px;
+    border-radius: 50px;
+    border: 10px solid greenyellow;
+    background-image: url("https://www.animatedimages.org/data/media/276/animated-school-image-0018.gif");
+    background-repeat: no-repeat;
+}
+.div-e{
+    position:absolute;
+    left: 25px;
+    width: 1450px;
+    height: 750px;
+    border-radius: 50px;
+    border: 10px solid greenyellow;
+    /*background-image: url("https://media4.giphy.com/media/xUA7aS269qm5PX7fa0/giphy.gif?cid=ecf05e47xiopkrysl6v6ymlzh0u2sp5smpkfly3ezjm7n7n0&rid=giphy.gif&ct=g");*/
+   
+}
+.div-f{
+    position:absolute;
+    left: 25px;
+    width: 1450px;
+    height: 750px;
+    border-radius: 50px;
+    border: 10px solid greenyellow;
+   
+}
+
+.btn-group button{
+    background-color: greenyellow;
+    border:3px solid black;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    width: 200px;
+    display: block;
+    margin-bottom: 50px;
+    height: 200px;
+    font-size: 20px;
+    margin-left: 35px;
+}
+
+.btn-group button:hover{
+    background-color: yellow;
+}
+#Paul{
+    align-self: center;
+}
+#Angel{
+    align-self: center;
+}
+#Aiden{
+    align-self: center;
+}
+#Winter{
+    align-self: center;
+}
+#Christian{
+    align-self: center;
+}
+.vl1{
+    border-left: 20px solid yellow;
+    height: 800px;
+    position: relative;
+    left: 20%;
+    margin-left: -100px;
+    top: -10;
+    width: 1500px;
+}
+
+.btn-group1 button{
+    background-color: greenyellow;
+    border:3px solid black;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    width: 200px;
+    display: block;
+    margin-bottom: 50px;
+    height: 200px;
+    font-size: 20px;
+    margin-left: 35px;
+    margin-left: 150px;
+
+}
+
+.btn-group1 button:hover{
+    background-color: yellow;
+}
+
+#Marie{
+    align-self: center;
+}
+
+#Charisse{
+    align-self: center;
+}
+
+#Erica{
+    align-self: center;
+}
+
+

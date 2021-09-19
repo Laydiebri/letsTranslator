@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    
+    <script src="student.js"></script>
+    <link rel = "stylesheet" href="./CSS files/home.css">
+    <link rel = "stylesheet" href="./CSS files/Choices.css">
+    <script src="./JS files/home.js"></script>
+    <title>Admin Page</title>
+    
+    <script>
+      var mainApp = angular.module("mainApp", []);
+
+      mainApp.controller("keywordtranslationController", function($scope, $http) {
+    $http.get("/keywordtranslations").then(function(response) {
+        $scope.keywordtranslations = response.data;
+      });  
+    }); 
+      mainApp.controller("lessontopicController", function($scope, $http) {
+        $http.get("/lessontopics").then(function(response) {
+        $scope.lessontopics = response.data;
+   }); });   
+
+    </script>
+</head>
+
+<header>
+    <div id="main">
+          <div class ="logo">
+
+              <img src="./images/World logo.jpg" alt="Nothing" width="200" height="150">
+      </div>
+
+      <div class = "title">
+          <img src="./images/Lets translate green.png" alt="nothing" width ="900" height="100">
+      </div>
+      <button class ="button3" onclick="goBack()">Back</button>
+      <button class ="button3" onclick="document.location='Homepage.html'">Home</button>
+
+</div>
+<hr style="height: 17px; width: 1500px; background-color:yellow;"/>
+  
+  </header>
+
+<body ng-app="mainApp">
+ 
+    
+
+
+<H1>Keyword Translations</H1>
+
+<div ng-controller="keywordtranslationController">
+
+
+<table border=1>
+    <tr>
+      
+      <th>Lesson</th>
+      <th>Title</th>
+      <th>Keyword Id</th>
+      <th>Keyword</th>
+      <th>Language</th>
+      <th>Translation</th>
+      <th>select</th>
+      
+    </tr>
+    <tr ng-repeat = "keywordtranslation in keywordtranslations">
+      
+      <td>{{ keywordtranslation.Lesson_ID }}</td>
+      <td>{{ keywordtranslation.Title }}</td>
+      <td>{{ keywordtranslation.Keyword_ID }}</td>
+      <td>{{ keywordtranslation.Word }}</td>
+      <td>{{ keywordtranslation.Language_ID }}</td>
+      <td>{{ keywordtranslation.Translation_word }}</td>
+      
+      
+      <td><input type="button" ng-click="selectKeywordTranslation(keywordtranslation.Lesson_ID)" value="Select"></td>
+    
+    </tr> 
+    <tr>
+      <td><input type="text" ng-model="new_keywordtranslation.Lesson_ID"></td>
+      <td><input type="text" ng-model="new_keywordtranslation.Title"></td>
+      <td><input type="text" ng-model="new_keywordtranslation.Keyword_ID"></td>
+      <td><input type="text" ng-model="new_keywordtranslation.Word"></td>
+      <td><input type="text" ng-model="new_keywordtranslation.Language_ID "></td>
+      <td><input type="text" ng-model="new_keywordtranslation.Translation_word"></td>
+      
+      
+      <td><input type="button" ng-click="createKeywordTranslation()" value="Create"></td>
+    
+      </tr>
+     
+  </table>
+    
+
+   
+  </div>
+
+<br>
+<br>
+
+<H1> Leson Topics</H1>
+
+  <div ng-controller="lessontopicController">
+  <table border=1>
+    <tr>
+      
+      <th>Lesson</th>
+      <th>Title</th>
+      <th>Topic</th>
+      <th>Topic name</th>
+    
+      <th>select</th>
+      
+    </tr>
+    <tr ng-repeat = "lessontopic in lessontopics">
+      
+      <td>{{ lessontopic.Lesson_ID }}</td>
+      <td>{{ lessontopic.Title }}</td>
+      <td>{{ lessontopic.Topic_ID }}</td>
+      <td>{{ lessontopic.Topic_name }}</td>
+      
+      
+      
+      <td><input type="button" ng-click="selectKeywordTranslation(keywordtranslation.Lesson_ID)" value="Select"></td>
+    
+    </tr> 
+    <tr>
+      <td><input type="text" ng-model="new_lessontopic.Lesson_ID"></td>
+      <td><input type="text" ng-model="new_lessontopic.Title"></td>
+      <td><input type="text" ng-model="new_lessontopic.Topic_ID"></td>
+      <td><input type="text" ng-model="new_lessontopic.Topic_name "></td>
+         
+      
+      <td><input type="button" ng-click="createKeywordTranslation()" value="Create"></td>
+    
+      </tr>
+     
+  </table>
+    
+</div>
+   
+  </div>
+</body>
+</html>

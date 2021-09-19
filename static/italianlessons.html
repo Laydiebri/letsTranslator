@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="./JS files/admin.js"></script>
+    <script src="./student.js"></script>
+    <script src="./JS files/languagelessons.js"></script>
+    <title>italian</title>
+
+</head>
+<body ng-app="mainApp">
+    
+<H1>All Students</H1>
+
+<div ng-controller="itintrotogamesController">
+
+
+<table border=1>
+    <tr>
+      
+      <th>Lesson_ID</th>
+      <th>Title</th>
+      <th>Keyword</th>
+      <th>word</th>
+      <th>Language</th>
+      <th>Translation_word</th>
+      
+    </tr>
+    <tr ng-repeat = "itintrotogame in itintrotogames">
+      
+        <td>{{ itintrotogame.Lesson_ID }}</td>
+        <td>{{ itintrotogame.Title }}</td>
+        <td>{{ itintrotogame.Keyword_ID }}</td>
+        <td>{{ itintrotogame.Word }}</td>
+        <td>{{ itintrotogame.Language_ID }}</td>
+        <td>{{ itintrotogame.Translation_word }}</td>
+    </tr>
+
+    </table>
+</div>
+
+<br>
+<br>
+<div ng-controller="ititerationandselectionController">
+
+
+  <table border=1>
+      <tr>
+        
+        <th>Lesson_ID</th>
+        <th>Title</th>
+        <th>Keyword</th>
+        <th>word</th>
+        <th>Language</th>
+        <th>Translation_word</th>
+        
+      </tr>
+      <tr ng-repeat = "ititerationandselection in ititerationandselections">
+        
+          <td>{{ ititerationandselection.Lesson_ID }}</td>
+          <td>{{ ititerationandselection.Title }}</td>
+          <td>{{ ititerationandselection.Keyword_ID }}</td>
+          <td>{{ ititerationandselection.Word }}</td>
+          <td>{{ ititerationandselection.Language_ID }}</td>
+          <td>{{ ititerationandselection.Translation_word }}</td>
+      </tr>
+  
+      </table>
+  </div>
+
+<div ng-controller="itvariablesandobjectsController">
+
+
+  <table border=1>
+      <tr>
+        
+        <th>Lesson_ID</th>
+        <th>Title</th>
+        <th>Keyword</th>
+        <th>word</th>
+        <th>Language</th>
+        <th>Translation_word</th>
+        
+      </tr>
+      <tr ng-repeat = "itvariablesandobject in itvariablesandobjects">
+        
+          <td>{{ itvariablesandobject.Lesson_ID }}</td>
+          <td>{{ itvariablesandobject.Title }}</td>
+          <td>{{ itvariablesandobject.Keyword_ID }}</td>
+          <td>{{ itvariablesandobject.Word }}</td>
+          <td>{{ itvariablesandobject.Language_ID }}</td>
+          <td>{{ itvariablesandobject.Translation_word }}</td>
+      </tr>
+  
+      </table>
+  </div>
+
+  <br>
+<br>
+
+<div ng-controller="itoperatorsController">
+
+
+  <table border=1>
+      <tr>
+        
+        <th>Lesson_ID</th>
+        <th>Title</th>
+        <th>Keyword</th>
+        <th>word</th>
+        <th>Language</th>
+        <th>Translation_word</th>
+        
+      </tr>
+      <tr ng-repeat = "itoperator in itoperators">
+        
+          <td>{{ itoperator.Lesson_ID }}</td>
+          <td>{{ itoperator.Title }}</td>
+          <td>{{ itoperator.Keyword_ID }}</td>
+          <td>{{ itoperator.Word }}</td>
+          <td>{{ itoperator.Language_ID }}</td>
+          <td>{{ itoperator.Translation_word }}</td>
+      </tr>
+  
+      </table>
+  </div>
+
+
+  <br>
+<br>
+

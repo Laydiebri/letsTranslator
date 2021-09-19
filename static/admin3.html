@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    
+    <script src="student.js"></script>
+    <link rel = "stylesheet" href="./CSS files/home.css">
+    <link rel = "stylesheet" href="./CSS files/Choices.css">
+    <script src="./JS files/home.js"></script>
+    <title>Admin Page</title>
+    
+    <script>
+    var mainApp = angular.module("mainApp", []);
+      mainApp.controller("lessonController", function($scope, $http) {
+        $http.get("/lessons").then(function(response) {
+        $scope.lessons = response.data;
+   }); });   
+ 
+    </script>
+</head>
+
+<header>
+  <div id="main">
+        <div class ="logo">
+
+            <img src="./images/World logo.jpg" alt="Nothing" width="200" height="150">
+    </div>
+
+    <div class = "title">
+        <img src="./images/Lets translate green.png" alt="nothing" width ="900" height="100">
+    </div>
+    <button class ="button3" onclick="goBack()">Back</button>
+    <button class ="button3" onclick="document.location='Homepage.html'">Home</button>
+
+</div>
+<hr style="height: 17px; width: 1500px; background-color:yellow;"/>
+
+</header>
+
+<body ng-app="mainApp">
+    <H1>All Lessons</H1>
+
+<div ng-controller="lessonController">
+
+
+<table border=1>
+    <tr>
+      
+      <th>Lesson</th>
+      <th>Teacher</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Period</th>
+      <th>Topic</th>
+      <th>class Group</th>
+      <th>select</th>
+      <th>delete</th>
+    </tr>
+    <tr ng-repeat = "lesson in lessons">
+      
+      <td>{{ lesson.Lesson_ID }}</td>
+      <td>{{ lesson.Teacher_ID }}</td>
+      <td>{{ lesson.Title }}</td>
+      <td>{{ lesson.Date }}</td>
+      <td>{{ lesson.Period }}</td>
+      <td>{{ lesson.Topic_ID}}</td>
+      <td>{{ lesson.Class_Group_ID }}</td>
+      
+  
+      
+      <td><input type="button" ng-click="selectEALStudent(ealstudent.Student_ID)" value="Select"></td>
+      <td><input type="button" ng-click="deleteEALStudent(ealstudent.Student_ID)" value="Delete"></td>
+    </tr> 
+    <tr>
+      <td><input type="text" ng-model="new_ealstudent.Student_ID"></td>
+      <td><input type="text" ng-model="new_ealstudent.First_name"></td>
+      <td><input type="text" ng-model="new_ealstudent.Surname "></td>
+      <td><input type="text" ng-model="new_ealstudent.DOB"></td>
+      <td><input type="text" ng-model="new_ealstudent.Email"></td>
+      <td><input type="text" ng-model="new_ealstudent.Year_group"></td>
+      <td><input type="text" ng-model="new_ealstudent.Language_ID "></td>
+      <td><input type="text" ng-model="new_ealstudent.Photo "></td>
+      
+      <td><input type="button" ng-click="createEALStudent()" value="Create"></td>
+    
+      </tr>
+     
+  </table>
+<br>
+<br>
+
+
+ 

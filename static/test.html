@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Keywords</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <link rel = "stylesheet" href="./CSS files/home.css">
+    <script src="./JS files/home.js"></script>
+    <script src="./JS files/languagelessons.js"></script>
+    
+    <script src="student.js"></script>
+
+    <style>
+
+    .pages{
+        margin-top: 100px;
+        padding: 50px 30px;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: black;
+    }
+    
+    .pages .page{
+        display: none;
+    
+    }
+    
+    .pages .page.is-active{
+        display: block;
+    }
+</style>
+    
+  </head>
+
+  <header>
+    <div id="main">
+          <div class ="logo">
+
+              <img src="./images/World logo.jpg" alt="Nothing" width="200" height="150">
+      </div>
+
+      <div class = "title">
+          <img src="./images/Lets translate green.png" alt="nothing" width ="900" height="100">
+      </div>
+
+      <button class ="button3" onclick="goBack()">Back</button>
+      <button class ="button3" onclick="document.location='Homepage.html'">Home</button>
+</div>
+<hr style="height: 17px; width: 1500px; background-color:yellow;"/>
+  
+  </header>
+
+
+
+  <body ng-app="mainApp">
+
+    
+
+      <div id="flex-container" class="pages" >
+        <div style="flex-basis: 245px"; id="Atlas">
+        <div class="btn-group2" >
+      
+   
+          <button class="tabs">
+              <li class = "tab is-active">
+            <a data-one data-tab ="1">Play</a>
+        </li></button>
+        <button class="tabs">
+            <li class = "tab ">
+            <a data-one data-tab ="2">no</a>
+        </li></button>
+    
+
+         </div>
+        </div>
+        </div>
+        
+           
+        
+            <div id="flex-container1" class="pages">
+
+            
+                <div class = "page is-active" data-page="1"> 
+                    <div class="content"> 
+              
+            <p> hello</p>
+              
+             
+                </div>
+            </div>
+
+            
+                <div class = "page " data-page="2">  
+                    <div class="content"> 
+                <p> yo</p>
+                  
+                </div>
+            </div>
+                </div>
+                </div>
+            </div>
+            
+                <div class ="Logout2"><button type="button" onclick="document.location='Homepage.html'">Logout</button></div>
+            
+        </div>
+     
+              </div>
+           
+     </div>
+
+  </body>
+</html>

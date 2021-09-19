@@ -1,0 +1,215 @@
+button{
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    margin-bottom: auto;
+    border: none;
+    cursor:pointer;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+button:hover{
+    opacity: 0.8;
+    background-color: yellow;
+}
+
+.button4{
+    background-color: greenyellow;
+    color: white;
+    padding: 14px 20px;
+    margin-bottom: auto;
+    border: none;
+    cursor:pointer;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 370px;
+}
+
+.button4:hover{
+    opacity: 0.8;
+}
+.button5{
+    background-color: greenyellow;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor:pointer;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 370px;
+    margin-top: -150px;
+}
+
+.button5:hover{
+    opacity: 0.8;
+}
+.form{
+   
+    height: 600px; 
+}
+.form1{
+    height: 400px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+    
+}
+.form3{
+    height: 425px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+    
+}
+#email{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-top: -100px;
+    
+}
+#password{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#Michelle{
+    font-size: 35px;
+    
+}
+
+#Clayton{
+    font-size: 35px;
+}
+.vl1{
+    border-left: 20px solid yellow;
+    height: 800px;
+    position: relative;
+    left: 20%;
+    margin-left: -100px;
+    top: -10;
+    width: 1500px;
+}
+
+.vl2{
+    border-left: 20px solid yellow;
+}
+.div-b{
+    position:absolute;
+    left: 25px;
+    width: 1450px;
+    height: 750px;
+    border-radius: 50px;
+    border: 10px solid greenyellow;
+    background-image: url("animated-student-image-1.gif"); 
+    background-repeat: no-repeat;   
+}
+#div-c{
+    display: flex;
+    height: 750px;
+    width: 1450px; 
+}
+#div-c> div{
+   
+    color: green;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 100px;
+    height: 600px;
+}
+#div-d{
+  display: flex;
+    height: 750px;
+    width: 1450px; 
+}
+#div-d> div{
+
+    width: 100px;
+    margin: 10px;
+    line-height: 100px;
+    height: 500px;
+}
+#Gina{
+ font-size: 30px;
+}
+
+#Danielle{
+    font-size: 30px;
+}
+#Jayde{
+    font-size: 25px;
+}
+
+#topic{
+    width: 650px;
+    padding: 12px 20px;
+    margin: 10px 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    align-self: center;
+    
+    
+}
+#lessons{
+    width: 650px;
+    padding: 12px 20px;
+    margin: 0 60px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#Name{
+    width: 650px;
+    padding: 12px 20px;
+    margin: 8px 75px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    align-self: center;   
+}
+#Date{
+    width: 650px;
+    padding: 12px 20px;
+    margin: 8px 50px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    align-self: center;
+    
+    
+}
+#NumStudents{
+    width: 650px;
+    padding: 12px 20px;
+    margin: 8px 25px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    align-self: center;
+    
+    
+}
+#Languages{
+    width: 650px;
+    padding: 12px 20px;
+    margin: 8px 90px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    align-self: center;
+    
+    
+}

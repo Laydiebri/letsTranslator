@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Keywords</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <link rel = "stylesheet" href="./CSS files/home.css">
+    <script src="./JS files/home.js"></script>
+    <script src="./JS files/languagelessons.js"></script>
+    
+    <script src="student.js"></script>
+
+  </head>
+
+  <header>
+    <div id="main">
+          <div class ="logo">
+
+              <img src="./images/World logo.jpg" alt="Nothing" width="200" height="150">
+      </div>
+
+      <div class = "title">
+          <img src="./images/Lets translate green.png" alt="nothing" width ="900" height="100">
+      </div>
+
+      <button class ="button3" onclick="goBack()">Back</button>
+      <button class ="button3" onclick="document.location='Homepage.html'">Home</button>
+</div>
+<hr style="height: 17px; width: 1500px; background-color:yellow;"/>
+  
+  </header>
+  <body ng-app="mainApp">
+
+    
+      <div id="flex-container">
+        <div style="flex-basis: 245px"; id="Atlas">
+        <div class="btn-group2">
+      
+          <button onclick="document.location='BinaryLesson1.html'">Keyword 1</button>
+          <button onclick="document.location='BinaryLesson2.html'">Keyword 2</button>
+          <button onclick="document.location='BinaryLesson3.html'">Keyword 3</button>
+          <button onclick="document.location='BinaryLesson4.html'">Keyword 4</button>
+          <button onclick="document.location='BinaryLesson5.html'">Keyword 5</button>
+          <button onclick="document.location='BinaryLesson6.html'">Keyword 6</button>
+        </div>
+        </div>
+        
+           
+
+            <div id="flex-container1">
+              
+            
+              
+              <div class ="main-heading">
+               
+                  <H1>Introducción al diseño de juegos</H1>
+                  
+                  <div ng-controller="esintrotogamesController">
+                  
+                  
+                  <table border=1>
+                      <tr>
+                        
+                        
+                        
+                        
+                        <th>word</th>
+                        
+                        <th>Translation_word</th>
+                        
+                        
+                      </tr>
+                      <tr ng-repeat = "esintrotogame in esintrotogames">
+                        
+                          <td>{{ esintrotogame.Word }}</td>
+                          
+                          <td>{{ esintrotogame.Translation_word }}</td>
+                      </tr>
+                  
+                      </table>
+                  </div>
+                </div>
+                <div class ="Logout2"><button type="button" onclick="document.location='Homepage.html'">Logout</button></div>
+            
+        </div>
+     
+              </div>
+          
+     </div>
+
+  </body>
+</html>
