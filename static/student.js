@@ -232,8 +232,7 @@ class EsIntroToGames {
     this.Keyword_ID= Keyword_ID;
     this.Word = Word;
     this.Language_ID = Language_ID;
-    this.Translation_word = Translation_word;
-        
+    this.Translation_word = Translation_word;     
   }
 }
 
@@ -261,4 +260,23 @@ class ItCrytography {
   }
 }
 
-
+class LessonKeywords {
+ 
+  Lesson_ID;
+  Title;
+ 
+  Keyword_ID;
+  Word ;
+  Language_name;
+  Translation_word;
+ 
+  constructor( Lesson_ID, Title, Keyword_ID, Word,Language_name,Translation_word){
+   
+    this.Lesson_ID = Lesson_ID;
+    this.Title = Title;
+    this.Keyword_ID= Keyword_ID;
+    this.Word = Word;
+    this.Language_name = Language_name;
+    this.Translation_word = Translation_word;    
+  }
+}

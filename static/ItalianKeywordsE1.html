@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Keywords</title>
-    <title>Keywords</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
     <link rel = "stylesheet" href="./CSS files/home.css">
     <script src="./JS files/home.js"></script>
@@ -29,13 +28,13 @@
 
       <button class ="button3" onclick="goBack()">Back</button>
       <button class ="button3" onclick="document.location='Homepage.html'">Home</button>
+     
 </div>
 <hr style="height: 17px; width: 1500px; background-color:yellow;"/>
   
   </header>
   <body ng-app="mainApp">
 
-    
       <div id="flex-container">
         <div style="flex-basis: 245px"; id="Atlas">
         
@@ -49,35 +48,70 @@
               
               <div class ="main-heading">
                
-                  <H1>	Operadores</H1>
-                  <br>
-                 
-                  <div ng-controller="esoperatorsController"></div>
+                  <H1>Poster sulla sicurezza elettronica</H1>
+                  
+                  <div ng-controller="itesafteyposterController">
+
+    
+
+    
+
                     <table border=1>
+    
                         <tr>
+    
                           
-                          <th>Lesson_ID</th>
+    
+                          <th>Lesson</th>
+    
                           <th>Title</th>
+    
+                          <th>Keyword Id</th>
+    
                           <th>Keyword</th>
-                          <th>word</th>
+    
                           <th>Language</th>
-                          <th>Translation_word</th>
-                          
+    
+                          <th>Translation</th>
+    
+                   
+    
                         </tr>
-                        <tr ng-repeat = "esoperator in esoperators">
+    
+                
+    
+                        <br>
+    
+                        <br>
+    
+                        <tr ng-repeat = "itesafteyposter in itesafteyposters">
+    
                           
-                            <td>{{ esoperator.Lesson_ID }}</td>
-                            <td>{{ esoperator.Title }}</td>
-                            <td>{{ esoperator.Keyword_ID }}</td>
-                            <td>{{ esoperator.Word }}</td>
-                            <td>{{ esoperator.Language_ID }}</td>
-                            <td>{{ esoperator.Translation_word }}</td>
-                        </tr>
-                    
+    
+                          <td>{{ itesafteyposter.Lesson_ID }}</td>
+    
+                          <td>{{ itesafteyposter.Title }}</td>
+    
+                          <td>{{ itesafteyposter.Keyword_ID }}</td>
+    
+                          <td>{{ itesafteyposter.Word }}</td>
+    
+                          <td>{{ itesafteyposter.Language_name }}</td>
+    
+                          <td>{{ itesafteyposter.Translation_word }}</td>
+    
+                  
+    
+                        </tr> 
+    
+    
+    
                         </table>
+    
+                  
                     </div>
-                  
-                  
+                    
+                </div>
                 <div class ="Logout2"><button type="button" onclick="document.location='Homepage.html'">Logout</button></div>
             
         </div>

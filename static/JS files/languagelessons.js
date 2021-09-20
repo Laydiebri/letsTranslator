@@ -51,6 +51,120 @@ mainApp.controller("ititerationandselectionController", function($scope, $http) 
    });  
    });
 
-       
+   var mainApp = angular.module("mainApp", []);
+
+
+
+   mainApp.controller("itcryptographyController", function($scope, $http) {
+
+ $http.get("/itcryptographys").then(function(response) {
+
+     $scope.itcryptographys = response.data;
+
+   });  
+
+ }); 
+
+  mainApp.controller("esdatabaseController", function($scope, $http) {
+
+ $http.get("/esdatabases").then(function(response) {
+
+     $scope.esdatabases = response.data;
+
+   });  
+
+ }); 
+
+
+
+  mainApp.controller("itdatabaseController", function($scope, $http) {
+
+ $http.get("/itdatabases").then(function(response) {
+
+     $scope.itdatabases = response.data;
+
+   });  
+
+ }); 
+
+
+
+
+
+
+
+ mainApp.controller("esintrotopythonController", function($scope, $http) {
+
+ $http.get("/esintrotopythons").then(function(response) {
+
+     $scope.esintrotopythons = response.data;
+
+   });  
+
+ }); 
+
+ mainApp.controller("itintrotopythonController", function($scope, $http) {
+
+ $http.get("/itintrotopythons").then(function(response) {
+
+     $scope.itintrotopythons = response.data;
+
+   });  
+
+ }); 
+
+
+
+
+
+
+
+
+
+ mainApp.controller("itifelseconditionController", function($scope, $http) {
+
+ $http.get("/itifelseconditions").then(function(response) {
+
+     $scope.itifelseconditions = response.data;
+
+   });   
+
+ }); 
+
+ mainApp.controller("esifelseconditionController", function($scope, $http) {
+
+ $http.get("/esifelseconditions").then(function(response) {
+
+     $scope.esifelseconditions = response.data;
+
+   });   
+
+ }); 
+
+
+
+
+
+
+
+ mainApp.controller("itesafteyposterController", function($scope, $http) {
+
+ $http.get("/itesafteyposters").then(function(response) {
+
+     $scope.itesafteyposters = response.data;
+
+   });   
+
+ }); 
+
+ mainApp.controller("esesafteyposterController", function($scope, $http) {
+
+ $http.get("/esesafteyposters").then(function(response) {
+
+     $scope.esesafteyposters = response.data;
+
+   });   
+
+ });    
 
  

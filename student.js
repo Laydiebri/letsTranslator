@@ -240,10 +240,10 @@ exports.EsIntroToGames = class {
 }
 
 exports.ItIntroToGames = class {
-  // Module code
+  
   Lesson_ID;
   Title;
-  // Module name
+  
   Keyword_ID;
   Word ;
   Language_ID;
@@ -262,10 +262,10 @@ exports.ItIntroToGames = class {
   }
 }
 exports.ItCrytography = class {
-  // Module code
+
   Lesson_ID;
   Title;
-  // Module name
+  
   Keyword_ID;
   Word ;
   
@@ -286,3 +286,27 @@ exports.ItCrytography = class {
 }
 
 
+exports.LessonKeywords = class {
+ 
+  Lesson_ID;
+  Title;
+ 
+  Keyword_ID;
+  Word ;
+  Language_name;
+  Translation_word;
+ 
+
+
+  constructor( Lesson_ID, Title, Keyword_ID, Word,Language_name,Translation_word){
+   
+    this.Lesson_ID = Lesson_ID;
+    this.Title = Title;
+    this.Keyword_ID= Keyword_ID;
+    this.Word = Word;
+    this.Language_name = Language_name;
+    this.Translation_word = Translation_word;
+   
+       
+  }
+}

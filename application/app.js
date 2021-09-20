@@ -271,7 +271,107 @@ app.get("/itcryptographys", function(req, res) {
   });
 });
 
+app.get("/itintrotogames", function(req, res) {
+  // Call getModules on data
+  data.getItIntroToGames(function(itintrotogames) {
+      res.json(itintrotogames);
+  });
+});
 
+
+
+app.get("/itvariablesandobjects", function(req, res) {
+  // Call getModules on data
+  data.getItVariablesandObjects(function(itvariablesandobjects) {
+      res.json(itvariablesandobjects);
+  });
+});
+
+app.get("/itoperators", function(req, res) {
+  // Call getModules on data
+  data.getItOperators(function(itoperators) {
+      res.json(itoperators);
+  });
+});
+
+app.get("/ititerationandselections", function(req, res) {
+  // Call getModules on data
+  data.getItIterationandSelections(function(ititerationandselections) {
+      res.json(ititerationandselections);
+  });
+});
+
+
+app.get("/itcryptographys", function(req, res) {
+  // Call getModules on data
+  data.getItCryptography(function(itcryptographys) {
+      res.json(itcryptographys);
+  });
+});
+app.get("/escryptographys", function(req, res) {
+  // Call getModules on data
+  data.getEsCryptography(function(escryptographys) {
+      res.json(escryptographys);
+  });
+});
+
+
+app.get("/itdatabases", function(req, res) {
+  // Call getModules on data
+  data.getItDatabase(function(itdatabases) {
+      res.json(itdatabases);
+  });
+});
+
+app.get("/esdatabases", function(req, res) {
+  // Call getModules on data
+  data.getItDatabase(function(esdatabases) {
+      res.json(esdatabases);
+  });
+});
+
+app.get("/esintrotopythons", function(req, res) {
+  // Call getModules on data
+  data.getEsIntroToPython(function(esintrotopythons) {
+      res.json(esintrotopythons);
+  });
+});
+
+app.get("/itintrotopythons", function(req, res) {
+  // Call getModules on data
+  data.getItIntroToPython(function(itintrotopythons) {
+      res.json(itintrotopythons);
+  });
+});
+
+
+app.get("/esifelseconditions", function(req, res) {
+  // Call getModules on data
+  data.getEsIfElseCondition(function(esifelseconditions) {
+      res.json(esifelseconditions);
+  });
+});
+app.get("/itifelseconditions", function(req, res) {
+  // Call getModules on data
+  data.getItIfElseCondition(function(itifelseconditions) {
+      res.json(itifelseconditions);
+  });
+});
+
+
+app.get("/itesafteyposters", function(req, res) {
+  // Call getModules on data
+  data.getItEsafteyPoster(function(itesafteyposters) {
+      res.json(itesafteyposters);
+  });
+});
+
+app.get("/esesafteyposters", function(req, res) {
+  // Call getModules on data
+  data.getEsEsafteyPoster(function(esesafteyposters) {
+      res.json(esesafteyposters);
+  });
+});
 
 
 

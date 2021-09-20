@@ -50,28 +50,54 @@
                
                   <H1>Introducción al diseño de juegos</H1>
                   
-                  <div ng-controller="esintrotogamesController">
-                  
-                  
-                  <table border=1>
-                      <tr>
-                        
-                        
-                        
-                        
-                        <th>word</th>
-                        
-                        <th>Translation_word</th>
-                        
-                        
-                      </tr>
-                      <tr ng-repeat = "esintrotogame in esintrotogames">
-                        
-                          <td>{{ esintrotogame.Word }}</td>
+                  <div ng-controller="escryptographyController">
+
+
+
+
+
+                    <table border=1>
+                
+                        <tr>
+                
                           
-                          <td>{{ esintrotogame.Translation_word }}</td>
-                      </tr>
-                  
+                
+                          <th>Lesson</th>
+                
+                          <th>Title</th>
+                
+                          <th>Keyword Id</th>
+                
+                          <th>Keyword</th>
+                
+                          <th>Language</th>
+                
+                          <th>Translation</th>
+                
+                        </tr>
+      
+                        <br>
+                
+                        <br>
+                
+                        <tr ng-repeat = "escryptography in escryptographys">
+                
+                          
+                
+                          <td>{{ escryptography.Lesson_ID }}</td>
+                
+                          <td>{{ escryptography.Title }}</td>
+                
+                          <td>{{ escryptography.Keyword_ID }}</td>
+                
+                          <td>{{ escryptography.Word }}</td>
+                
+                          <td>{{ escryptography.Language_name }}</td>
+                
+                          <td>{{ escryptography.Translation_word }}</td>
+                
+                        </tr> 
+                        
                       </table>
                   </div>
                 </div>

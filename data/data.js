@@ -602,7 +602,7 @@ exports.getItCryptography = function(callback) {
         // Loop through each row and create a module object
         for (var row of rows) {
             // Create module object
-            var itcrypt = new student.ItCryptography(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Translation_word, row.Language_name);
+            var itcrypt = new student.ItCrytography(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Translation_word, row.Language_name);
             // Add module to array
             itcrytographys.push(itcrypt);
         }
@@ -611,7 +611,270 @@ exports.getItCryptography = function(callback) {
     });
 };
 
+exports.getItDatabase = function(callback) {
+    // Create SQL statement
+    var sql = `
+    select lesson.Lesson_ID, lesson.Title, keyword.Keyword_ID, keyword.Word,
+    language.Language_name, translation.Translation_word
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID and lesson.Lesson_ID = lesson_keyword.Lesson_ID
+    and translation.Translation_ID = keyword_translation.Translation_ID
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID
+    and language.Language_ID = keyword_translation.Language_ID
+    and lesson.title = "Introduction to Databases"
+    and keyword_translation.language_id = "it" group by translation.Translation_word;`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var itdatabases= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var itdata = new student.LessonKeywords(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Language_name, row.Translation_word);
+            // Add module to array
+            itdatabases.push(itdata);
+        }
+        // Execute callback function
+        callback(itdatabases);
+    });
+};
 
+
+exports.getEsDatabase = function(callback) {
+    // Create SQL statement
+    var sql = `
+    select lesson.Lesson_ID, lesson.Title, keyword.Keyword_ID, keyword.Word,
+    language.Language_name, translation.Translation_word
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID and lesson.Lesson_ID = lesson_keyword.Lesson_ID
+    and translation.Translation_ID = keyword_translation.Translation_ID
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID
+    and language.Language_ID = keyword_translation.Language_ID
+    and lesson.title = "Introduction to Databases"
+    and keyword_translation.language_id = "es" group by translation.Translation_word;`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var esdatabases= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var esdata = new student.LessonKeywords(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Language_name, row.Translation_word);
+            // Add module to array
+            esdatabases.push(esdata);
+        }
+        // Execute callback function
+        callback(esdatabases);
+    });
+};
+
+exports.getItIntroToPython = function(callback) {
+    // Create SQL statement
+    var sql = `
+    select lesson.Lesson_ID, lesson.Title, lesson.Topic_ID, keyword.Keyword_ID, keyword.Word,
+    translation.Translation_word, language.Language_name
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID
+    and lesson.Lesson_ID = lesson_keyword.Lesson_ID
+    and translation.Translation_ID = keyword_translation.Translation_ID
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID
+    and language.Language_ID = keyword_translation.Language_ID
+    and lesson.title = "Introduction to Python"
+    and language.Language_ID = "it" group by keyword.Keyword_ID order by keyword.Keyword_ID;`
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var itintrotopythons= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var esdata = new student.LessonKeywords(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Language_name, row.Translation_word);
+            // Add module to array
+            itintrotopythons.push(esdata);
+        }
+        // Execute callback function
+        callback(itintrotopythons);
+    });
+};
+
+exports.getEsIntroToPython = function(callback) {
+    // Create SQL statement
+    var sql = `
+    select lesson.Lesson_ID, lesson.Title, lesson.Topic_ID, keyword.Keyword_ID, keyword.Word,
+    translation.Translation_word, language.Language_name
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID
+    and lesson.Lesson_ID = lesson_keyword.Lesson_ID
+    and translation.Translation_ID = keyword_translation.Translation_ID
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID
+    and language.Language_ID = keyword_translation.Language_ID
+    and lesson.title = "Introduction to Python"
+    and language.Language_ID = "es" group by keyword.Keyword_ID order by keyword.Keyword_ID;`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var esintrotopythons= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var esdata = new student.LessonKeywords(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Language_name, row.Translation_word);
+            // Add module to array
+            esintrotopythons.push(esdata);
+        }
+        // Execute callback function
+        callback(esintrotopythons);
+    });
+};
+
+
+exports.getEsIfElseCondition = function(callback) {
+    // Create SQL statement
+    var sql = `
+    select lesson.Lesson_ID, lesson.Title, lesson.Topic_ID, keyword.Keyword_ID, keyword.Word,
+    translation.Translation_word, language.Language_name
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID
+    and lesson.Lesson_ID = lesson_keyword.Lesson_ID
+    and translation.Translation_ID = keyword_translation.Translation_ID
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID
+    and language.Language_ID = keyword_translation.Language_ID
+    and lesson.title = "If Else Conditions"
+    and language.Language_ID = "es" group by keyword.Keyword_ID order by keyword.Keyword_ID;`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var esifelseconditions= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var esdata = new student.LessonKeywords(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Language_name, row.Translation_word);
+            // Add module to array
+            esifelseconditions.push(esdata);
+        }
+        // Execute callback function
+        callback(esifelseconditions);
+    });
+};
+
+exports.getItIfElseCondition = function(callback) {
+    // Create SQL statement
+    var sql = `
+    select lesson.Lesson_ID, lesson.Title, lesson.Topic_ID, keyword.Keyword_ID, keyword.Word,
+    translation.Translation_word, language.Language_name
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID
+    and lesson.Lesson_ID = lesson_keyword.Lesson_ID
+    and translation.Translation_ID = keyword_translation.Translation_ID
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID
+    and language.Language_ID = keyword_translation.Language_ID
+    and lesson.title = "If Else Conditions"
+    and language.Language_ID = "it" group by keyword.Keyword_ID order by keyword.Keyword_ID;`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var itifelseconditions= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var itdata = new student.LessonKeywords(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Language_name, row.Translation_word);
+            // Add module to array
+            itifelseconditions.push(itdata);
+        }
+        // Execute callback function
+        callback(itifelseconditions);
+    });
+};
+
+
+exports.getEsEsafteyPoster = function(callback) {
+    // Create SQL statement
+    var sql = `
+    select lesson.Lesson_ID, lesson.Title, lesson.Topic_ID, keyword.Keyword_ID, keyword.Word,
+    translation.Translation_word, language.Language_name
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID
+    and lesson.Lesson_ID = lesson_keyword.Lesson_ID
+    and translation.Translation_ID = keyword_translation.Translation_ID
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID
+    and language.Language_ID = keyword_translation.Language_ID
+    and lesson.title = "E-Safety Poster Design"
+    and language.Language_ID = "es" group by keyword.Keyword_ID order by keyword.Keyword_ID;`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var esesafteyposters= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var esdata = new student.LessonKeywords(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Language_name, row.Translation_word);
+            // Add module to array
+            esesafteyposters.push(esdata);
+        }
+        // Execute callback function
+        callback(esesafteyposters);
+    });
+};
+
+exports.getItEsafteyPoster = function(callback) {
+    // Create SQL statement
+    var sql = `
+    select lesson.Lesson_ID, lesson.Title, lesson.Topic_ID, keyword.Keyword_ID, keyword.Word,
+    translation.Translation_word, language.Language_name
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID
+    and lesson.Lesson_ID = lesson_keyword.Lesson_ID
+    and translation.Translation_ID = keyword_translation.Translation_ID
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID
+    and language.Language_ID = keyword_translation.Language_ID
+    and lesson.title = "E-Safety Poster Design"
+    and language.Language_ID = "it" group by keyword.Keyword_ID order by keyword.Keyword_ID;`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var itesafteyposters= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var itdata = new student.LessonKeywords(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Language_name, row.Translation_word);
+            // Add module to array
+            itesafteyposters.push(itdata);
+        }
+        // Execute callback function
+        callback(itesafteyposters);
+    });
+};
 
 
 
