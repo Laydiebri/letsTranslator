@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,10 +36,9 @@
   </header>
   <body ng-app="mainApp">
 
-    
       <div id="flex-container">
         <div style="flex-basis: 245px"; id="Atlas">
-      
+        
         </div>
         
            
@@ -49,36 +49,41 @@
               
               <div class ="main-heading">
                
-                  <H1>Variabili e oggetti</H1>
+                  <H1>	Introduzione al game design</H1>
                   
-                  <div ng-controller="itvariablesandobjectsController">
+                  <div ng-controller="itcryptographyController">
 
 
-                    <table border=1>
-                        <tr>
-                          
-                          <th>Lesson_ID</th>
-                          <th>Title</th>
-                          <th>Keyword</th>
-                          <th>word</th>
-                          <th>Language</th>
-                          <th>Translation_word</th>
-                          
-                        </tr>
-                        <tr ng-repeat = "itvariablesandobject in itvariablesandobjects">
-                          
-                            <td>{{ itvariablesandobject.Lesson_ID }}</td>
-                            <td>{{ itvariablesandobject.Title }}</td>
-                            <td>{{ itvariablesandobject.Keyword_ID }}</td>
-                            <td>{{ itvariablesandobject.Word }}</td>
-                            <td>{{ itvariablesandobject.Language_ID }}</td>
-                            <td>{{ itvariablesandobject.Translation_word }}</td>
-                        </tr>
-                    
-                        </table>
+                  <table border=1>
+                      <tr>
+                        
+                        <th>Lesson</th>
+                        <th>Title</th>
+                        <th>Keyword Id</th>
+                        <th>Keyword</th>
+                        <th>Translation</th>
+                        <th>Language</th>
+                        
+                        
+                        
+                      </tr>
+                      <tr ng-repeat = "itcryptography in itcryptographys">
+                        
+                        <td>{{ itcryptography.Lesson_ID }}</td>
+                        <td>{{ itcryptography.Title }}</td>
+                        <td>{{ itcryptography.Keyword_ID }}</td>
+                        <td>{{ itcryptography.Word }}</td>
+                        <td>{{ itcryptography.Translation_word }}</td>
+                        <td>{{ itcryptography.Language_name }}</td>
+                      
+                      </tr> 
+                     
+                       
+                    </table>
+                  
                     </div>
-                    <br>
-                  <br>
+                    
+                </div>
                 <div class ="Logout2"><button type="button" onclick="document.location='Homepage.html'">Logout</button></div>
             
         </div>

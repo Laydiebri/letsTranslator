@@ -17,22 +17,6 @@
 
     <style>
 
-        .pages{
-            margin-top: 100px;
-            padding: 50px 30px;
-            border-radius: 8px;
-            background-color: white;
-            box-shadow: black;
-        }
-        
-        .pages .page{
-            display: none;
-        
-        }
-        
-        .pages .page.is-active{
-            display: block;
-        }
     </style>
   </head>
 
@@ -95,7 +79,7 @@
             <div class="vl"></div></div>
 
             <div id="flex-container1" class="pages">
-                <div style="flex-basis: 550px"; id="">
+                <div style="flex-basis: 530px"; id="">
 
                 <div class = "page is-active" data-page="1"> 
                     <div class="content"> 
@@ -118,7 +102,7 @@
                                   <th>Email</th>
                                   <th>Year Group</th>
                                   <th>Language ID</th>
-                                  <th>Photo</th>
+                                  
                                   <th>select</th>
                                   <th>delete</th>
                                 </tr>
@@ -131,7 +115,7 @@
                                   <td>{{ ealstudent.Email }}</td>
                                   <td>{{ ealstudent.Year_group }}</td>
                                   <td>{{ ealstudent.Language_ID }}</td>
-                                  <td>{{ ealstudent.Photo }}</td>
+                                 
                               
                                   
                                   <td><input type="button" ng-click="selectEALStudent(ealstudent.Student_ID)" value="Select"></td>
@@ -198,9 +182,9 @@
               </div>
   
         </div>
-              </div>
             
-          
+            
+              
               <div class = "page " data-page="2"> 
                 <div class="content"> 
                     <H1>Year 7</H1>
@@ -245,7 +229,7 @@
       <td><input type="text" ng-model="new_y7ealstudent.Email"></td>
       <td><input type="text" ng-model="new_y7ealstudent.Year_group"></td>
       <td><input type="text" ng-model="new_y7ealstudent.Language_ID "></td>
-      <td><input type="text" ng-model="new_y7ealstudent.Photo "></td>
+     
       
       <td><input type="button" ng-click="createY7EALStudent()" value="Create"></td>
     

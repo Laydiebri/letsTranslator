@@ -11,112 +11,10 @@ var db = new sqlite3.Database("data/students.db", function(err) {
     if (err) {
         return console.error(err.message);
     }
-    console.log("Connected to students database.");
+    console.log("You are connected");
 });
 
-// Export getStudents function
-exports.getStudents = function(callback) {
-    // Create SQL statement
-    var sql = `
-        SELECT 
-            Students.id, 
-            Students.first_name, 
-            Students.last_name, 
-            Students.programme,
-            Programmes.name
-        FROM
-            Students,
-            Programmes
-        WHERE
-            Students.programme = Programmes.code
-        `;
-    // Execute query. Return all
-    db.all(sql, function(err, rows) {
-        // Check if error
-        if (err) {
-            return console.error(err.message);
-        }
-        // Create an array of Students
-        var students = [];
-        // Loop through rows creating Student objects
-        for (var row of rows) {
-            // Create programme object
-            var prog = new student.Programme(row.programme, row.name);
-            // Create student object
-            var stud = new student.Student(row.id, row.first_name, row.last_name, prog);
-            // Add student to array
-            students.push(stud);
-        }
-        // Execute callback function
-        callback(students);
-    });
-};
 
-// Export getProgrammes function
-exports.getProgrammes = function(callback) {
-    // Create SQL statement
-    var sql = `SELECT * FROM Programmes`;
-    // Execute query. Return all
-    db.all(sql, function(err, rows) {
-        // Check if error
-        if (err) {
-            return console.error(err.message);
-        }
-        // Create programme array
-        var programmes = [];
-        // Loop through rows creating programme objects
-        for (var row of rows) {
-            // Create programme object
-            var prog = new student.Programme(row.code, row.name);
-            // Add object to array
-            programmes.push(prog);
-        }
-        // Execute callback function
-        callback(programmes);
-    });
-};
-
-// Export getModules function
-// Export getModules function
-exports.getModules = function(callback) {
-    // Create SQL statement
-    var sql = `SELECT * FROM Modules`;
-    // Execute query. Return all
-    db.all(sql, function(err, rows) {
-        // Check if error
-        if (err) {
-            return console.error(err.message);
-        }
-        // Create modules array
-        var modules = [];
-        // Loop through each row and create a module object
-        for (var row of rows) {
-            // Create module object
-            var mod = new student.Module(row.code, row.name);
-            // Add module to array
-            modules.push(mod);
-        }
-        // Execute callback function
-        callback(modules);
-    });
-};
-
-exports.getModule = function(code, callback) {
-    // Create SQL statement
-    var sql = `
-        SELECT * FROM Modules
-        WHERE code = '${code}'`;
-    // Execute query. Only one row returned.
-    db.get(sql, function(err, row) {
-        if (err) {
-            return console.error(err.message);
-        }
-        // Create a module object
-        var module = new student.Module(row.code, row.name);
-        // Return module
-        callback(module);
-    });
-};
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -680,7 +578,38 @@ exports.getItOperators = function(callback) {
         callback(itoperators);
     });
 };
-
+exports.getItCryptography = function(callback) {
+    // Create SQL statement
+    var sql = ` 
+    select lesson.Lesson_ID, lesson.Title,  keyword.Keyword_ID, keyword.Word, 
+    translation.Translation_word, language.Language_name 
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language 
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID 
+    and lesson.Lesson_ID = lesson_keyword.Lesson_ID 
+    and translation.Translation_ID = keyword_translation.Translation_ID 
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID 
+    and language.Language_ID = keyword_translation.Language_ID 
+    and lesson.title = "Introduction to Cryptography" 
+    and keyword_translation.language_id = "it";`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var itcrytographys= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var itcrypt = new student.ItCryptography(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Translation_word, row.Language_name);
+            // Add module to array
+            itcrytographys.push(itcrypt);
+        }
+        // Execute callback function
+        callback(itcrytographys);
+    });
+};
 
 
 

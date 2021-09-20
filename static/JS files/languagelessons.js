@@ -42,5 +42,15 @@ mainApp.controller("ititerationandselectionController", function($scope, $http) 
      $http.get("/ititerationandselections").then(function(response) {
      $scope.ititerationandselections = response.data;
 }); });
+    
+    var mainApp = angular.module("mainApp", []);
+   
+   mainApp.controller("itcryptographyController", function($scope, $http) {
+   $http.get("/itcryptographys").then(function(response) {
+     $scope.itcryptographys = response.data;
+   });  
+   });
+
+       
 
  

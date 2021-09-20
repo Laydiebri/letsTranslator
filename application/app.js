@@ -28,7 +28,7 @@ let db = new sqlite3.Database("data/students.db", function(err) {
   if (err) {
       return console.error(err.message);
   }
-  console.log("to the Lets Translate database");
+  console.log("to the LetsTranslate app database system");
 });
 
 
@@ -70,7 +70,7 @@ app.post("/teacherlogin", encoder, function(req,res){
 db.all("select * from Teacher_Login where Email = ? and Password = ?", [email, password], function(error,results,fields){
  //conditional statement- if there are results then re to direct to the Student Subject Choice page.
   if (results.length > 0) {
-    res.redirect("/TeachersArea1.html");
+    res.redirect("/TeacherArea.html");
   //Otherwise stay on the student Login page
 } else {
     res.redirect("/teacherlogin.html");
@@ -78,21 +78,6 @@ db.all("select * from Teacher_Login where Email = ? and Password = ?", [email, p
 res.end();
 })
 })
-
-// Add /module endpoint
-app.get("/module/:code", function(req, res) {
-  // Return "Module <code>"
-  res.send("Module " + req.params.code);
-});
-
-// Add /modules endpoint
-app.get("/modules", function(req, res) {
-  // Return "All modules"
-  data.getModules(function(modules) {
-    res.json(modules);
-});
-});
-
 
 
 app.get("/",function(req,res){
@@ -116,55 +101,6 @@ res.end();
 })
 })
 
-// Add /programme endpoint
-app.get("/programme/:code", function(req, res) {
-  // Return "Programme <code>"
-  res.send("Programme " + req.params.code);
-});
-
-// Add /programmes endpoint
-app.get("/programmes", function(req, res) {
-  // Return "All programmes"
-  res.send("All programmes");
-});
-
-// Add /student endpoint
-app.get("/student/:id", function(req, res) {
-  // Return "Student <id>"
-  res.send("Student " + req.params.id);
-});
-
-// Add /students endpoint
-app.get("/students", function(req, res) {
-    // Call getStudents on data
-    data.getStudents(function(students) {
-      res.json(students);
-    });
-  });
-
-  // Add /programmes endpoint
-app.get("/programmes", function(req, res) {
-    // Call getProgrammes on data
-    data.getProgrammes(function(programmes) {
-        res.json(programmes);
-    });
-});
-
-app.get("/module/:code", function(req, res) {
-    // Call getModule on data
-    data.getModule(req.params.code, function(module) {
-        res.json(module);
-    });
-});
-
-// Add /modules endpoint
-app.get("/modules", function(req, res) {
-    // Call getModules on data
-    data.getModules(function(modules) {
-        res.json(modules);
-    });
-});
-///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -201,7 +137,6 @@ app.get("/y7ealstudents/:Student_ID", function(req, res) {
       res.json(y7ealstudent);
   });
 });
-
 
 
 app.delete("/ealstudents/:Student_ID", function(req, res) {
@@ -327,6 +262,12 @@ app.get("/ititerationandselections", function(req, res) {
   // Call getModules on data
   data.getItIterationandSelections(function(ititerationandselections) {
       res.json(ititerationandselections);
+  });
+});
+app.get("/itcryptographys", function(req, res) {
+  // Call getModules on data
+  data.getItCryptography(function(itcryptographys) {
+      res.json(itcryptographys);
   });
 });
 

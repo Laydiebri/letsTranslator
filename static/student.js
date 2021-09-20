@@ -193,10 +193,9 @@ class LessonTopic  {
 
 
 class KeywordTranslation  {
-  // Module code
+  
   Lesson_ID;
   Title;
-  // Module name
   Keyword_ID;
   Word ;
   Language_ID;
@@ -238,5 +237,28 @@ class EsIntroToGames {
   }
 }
 
+class ItCrytography {
+  // Module code
+  Lesson_ID;
+  Title;
+  // Module name
+  Keyword_ID;
+  Word ;
+  
+  Translation_word;
+  Language_name;
+
+
+  constructor( Lesson_ID, Title, Keyword_ID, Word, Translation_word, Language_name){
+    
+    this.Lesson_ID = Lesson_ID;
+    this.Title = Title;
+    this.Keyword_ID= Keyword_ID;
+    this.Word = Word;
+    this.Translation_word = Translation_word;
+    this.Language_name = Language_name;
+        
+  }
+}
 
 
