@@ -12,6 +12,14 @@
     <script src="./JS files/languagelessons.js"></script>
     
     <script src="student.js"></script>
+    <script>
+
+var mainApp = angular.module("mainApp", []);
+      mainApp.controller("itoperatorsController", function($scope, $http) {
+        $http.get("/itoperators").then(function(response) {
+        $scope.itoperators = response.data;
+   }); });
+    </script>
 
   </head>
 

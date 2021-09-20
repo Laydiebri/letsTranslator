@@ -138,6 +138,19 @@ app.get("/y7ealstudents/:Student_ID", function(req, res) {
   });
 });
 
+app.get("/y8ealstudents", function(req, res) {
+  // Call getModules on data
+  data.getY8EALStudents(function(y8ealstudents) {
+      res.json(y8ealstudents);
+  });
+});
+
+app.get("/y8ealstudents/:Student_ID", function(req, res) {
+  // Call getModules on data
+  data.getY8EALStudent(req.params.Student_ID,function(y8ealstudent) {
+      res.json(y8ealstudent);
+  });
+});
 
 app.delete("/ealstudents/:Student_ID", function(req, res) {
     // Call getSingalongs on data

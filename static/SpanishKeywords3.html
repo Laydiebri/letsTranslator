@@ -10,9 +10,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
     <link rel = "stylesheet" href="./CSS files/home.css">
     <script src="./JS files/home.js"></script>
-    <script src="./JS files/languagelessons.js"></script>
-    
     <script src="student.js"></script>
+    <script>
+      var mainApp = angular.module("mainApp", []);
+     mainApp.controller("esoperatorsController", function($scope, $http) {
+             $http.get("/esoperators").then(function(response) {
+             $scope.esoperators = response.data;
+        }); });
+     
+         </script>
+   
+    
+   
 
   </head>
 

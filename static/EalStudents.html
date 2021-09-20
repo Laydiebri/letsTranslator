@@ -61,14 +61,7 @@
             <li class = "tab ">
             <a data-one data-tab ="4">Year 9</a>
         </li></button>
-        <button class="tabs">
-            <li class = "tab ">
-            <a data-one data-tab ="5">Year 10</a>
-        </li></button>
-        <button class="tabs">
-            <li class = "tab ">
-            <a data-one data-tab ="6">Year 11</a>
-        </li></button>
+      
       
          
         </div>
@@ -102,7 +95,7 @@
                                   <th>Email</th>
                                   <th>Year Group</th>
                                   <th>Language ID</th>
-                                  
+                                  <th>Photo</th>
                                   <th>select</th>
                                   <th>delete</th>
                                 </tr>
@@ -115,6 +108,7 @@
                                   <td>{{ ealstudent.Email }}</td>
                                   <td>{{ ealstudent.Year_group }}</td>
                                   <td>{{ ealstudent.Language_ID }}</td>
+                                  <td>{{ ealstudent.Photo }}</td>
                                  
                               
                                   
@@ -202,9 +196,9 @@
       <th>Email</th>
       <th>Year Group</th>
       <th>Language ID</th>
-      <th>Photo</th>
+      
       <th>select</th>
-      <th>delete</th>
+    
     </tr>
     <tr ng-repeat = "y7ealstudent in y7ealstudents">
       
@@ -215,11 +209,11 @@
       <td>{{ y7ealstudent.Email }}</td>
       <td>{{ y7ealstudent.Year_group }}</td>
       <td>{{ y7ealstudent.Language_ID }}</td>
-      <td>{{ y7ealstudent.Photo }}</td>
+      
   
       
       <td><input type="button" ng-click="selectY7EALStudent(y7ealstudent.Student_ID)" value="Select"></td>
-      <td><input type="button" ng-click="deleteY7EALStudent(y7ealstudent.Student_ID)" value="Delete"></td>
+  
     </tr> 
     <tr>
       <td><input type="text" ng-model="new_y7ealstudent.Student_ID"></td>
@@ -231,7 +225,7 @@
       <td><input type="text" ng-model="new_y7ealstudent.Language_ID "></td>
      
       
-      <td><input type="button" ng-click="createY7EALStudent()" value="Create"></td>
+     
     
       </tr>
      
@@ -280,6 +274,106 @@
 
 </div>
      </div>
+
+
+           
+     <div class = "page " data-page="3"> 
+      <div class="content"> 
+          <H1>Year 8</H1>
+
+<div ng-controller="y8ealstudentController">
+
+
+<table border=1>
+<tr>
+
+<th>Student ID</th>
+<th>First Name</th>
+<th>Surname</th>
+<th>DOB</th>
+<th>Email</th>
+<th>Year Group</th>
+<th>Language ID</th>
+<th>Photo</th>
+<th>select</th>
+<th>delete</th>
+</tr>
+<tr ng-repeat = "y8ealstudent in y8ealstudents">
+
+<td>{{ y8ealstudent.Student_ID }}</td>
+<td>{{ y8ealstudent.First_name }}</td>
+<td>{{ y8ealstudent.Surname }}</td>
+<td>{{ y8ealstudent.DOB }}</td>
+<td>{{ y8ealstudent.Email }}</td>
+<td>{{ y8ealstudent.Year_group }}</td>
+<td>{{ y8ealstudent.Language_ID }}</td>
+
+
+
+<td><input type="button" ng-click="selectY8EALStudent(y8ealstudent.Student_ID)" value="Select"></td>
+
+</tr> 
+<tr>
+<td><input type="text" ng-model="new_y8ealstudent.Student_ID"></td>
+<td><input type="text" ng-model="new_y8ealstudent.First_name"></td>
+<td><input type="text" ng-model="new_y8ealstudent.Surname "></td>
+<td><input type="text" ng-model="new_y8ealstudent.DOB"></td>
+<td><input type="text" ng-model="new_y8ealstudent.Email"></td>
+<td><input type="text" ng-model="new_y8ealstudent.Year_group"></td>
+<td><input type="text" ng-model="new_y8ealstudent.Language_ID "></td>
+
+
+
+
+</tr>
+
+</table>
+<br>
+<br>
+
+
+
+<div id="selected">
+    
+<table border=1>
+<tr>
+
+<th>Student ID</th>
+<th>First Name</th>
+<th>Surname</th>
+<th>Email</th>
+<th>Year Group</th>
+<th>Language ID</th>
+
+</tr>
+<tr>
+
+
+
+<td>{{ selectedY8EALStudent.Student_ID }}</td>
+<td>{{ selectedY8EALStudent.First_name }}</td>
+<td>{{ selectedY8EALStudent.Surname }}</td>
+<td>{{ selectedY8EALStudent.Email }}</td>
+<td>{{ selectedY8EALStudent.Year_group }}</td>
+<td>{{ selectedY8EALStudent.Language_ID }}</td>
+</tr>
+
+</table>
+
+<br>
+<br>
+
+<img src="{{selectedY8EALStudent.Photo}}" alt="student photo">
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+
+
 
   </body>
 </html>

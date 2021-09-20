@@ -13,6 +13,17 @@
     
     <script src="student.js"></script>
 
+    <script>
+
+      var mainApp = angular.module("mainApp", []);
+      mainApp.controller("itvariablesandobjectsController", function($scope, $http) {
+     $http.get("/itvariablesandobjects").then(function(response) {
+     $scope.itvariablesandobjects = response.data;
+}); }); 
+            
+          </script>
+      
+
   </head>
 
   <header>

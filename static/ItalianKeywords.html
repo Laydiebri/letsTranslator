@@ -12,6 +12,13 @@
     <script src="./JS files/languagelessons.js"></script>
     
     <script src="student.js"></script>
+    <script>
+       var mainApp = angular.module("mainApp", []);
+        mainApp.controller("itintrotogamesController", function($scope, $http) {
+     $http.get("/itintrotogames").then(function(response) {
+     $scope.itintrotogames = response.data;
+}); });  
+    </script>
 
   </head>
 
@@ -48,7 +55,7 @@
               
               <div class ="main-heading">
                
-                  <H1>Introduzione al design dei giochi</H1>
+                  <H1>Introducción al diseño de juegos</H1>
                   
                   <div ng-controller="itintrotogamesController">
 

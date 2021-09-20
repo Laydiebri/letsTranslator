@@ -12,7 +12,16 @@
     <script src="./JS files/languagelessons.js"></script>
     
     <script src="student.js"></script>
-
+    <script>
+      
+      var mainApp = angular.module("mainApp", []);
+      mainApp.controller("esvariablesandobjectsController", function($scope, $http) {
+        $http.get("/esvariablesandobjects").then(function(response) {
+        $scope.esvariablesandobjects = response.data;
+   }); }); 
+     
+    </script>
+   
   </head>
 
   <header>

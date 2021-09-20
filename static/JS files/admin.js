@@ -76,6 +76,32 @@ mainApp.controller("y7ealstudentController", function($scope, $http) {
     };
   
 });
+
+mainApp.controller("y8ealstudentController", function($scope, $http) {
+ 
+  document.getElementById("selected").style.display="none";
+    // Initially hides the "selected" element
+    
+
+    $http.get("/y8ealstudents").then(function(response) {
+        $scope.y8ealstudents = response.data;
+      });   
+
+     
+      $scope.selectY8EALStudent = function(Student_ID) {
+        // Get specific programme by code
+        $http.get("/y8ealstudents/" + Student_ID).then(function(response) {
+          $scope.selectedY8EALStudent = response.data;
+          document.getElementById("selected").style.display="block";
+          // Show the "selected" element
+         
+        });
+    };
+  
+});
+  
+  
+   
   
   
    

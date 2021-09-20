@@ -13,6 +13,16 @@
     
     <script src="student.js"></script>
 
+    <script>
+       var mainApp = angular.module("mainApp", []);
+      
+      
+      mainApp.controller("esintrotogamesController", function($scope, $http) {
+        $http.get("/esintrotogames").then(function(response) {
+        $scope.esintrotogames = response.data;
+   }); });   
+    </script>
+
   </head>
 
   <header>
@@ -33,7 +43,7 @@
   
   </header>
   <body ng-app="mainApp">
-
+   
     
       <div id="flex-container">
         <div style="flex-basis: 245px"; id="Atlas">
@@ -50,7 +60,7 @@
                         <th>word</th>
                         <th>Translation_word</th>
                       </tr>
-                      
+
                       <tr ng-repeat = "esintrotogame in esintrotogames">
                         
                           <td>{{ esintrotogame.Word }}</td>

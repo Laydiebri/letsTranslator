@@ -56,7 +56,7 @@
       <th>Keyword</th>
       <th>Language</th>
       <th>Translation</th>
-      <th>select</th>
+      
       
     </tr>
     <tr ng-repeat = "allkeyword in allkeywords">
@@ -66,19 +66,7 @@
       <td>{{ allkeyword.Language_name}}</td>
       <td>{{ allkeyword.Translation_word }}</td>
       
-      <td><input type="button" ng-click="selectKeywordTranslation(keywordtranslation.Lesson_ID)" value="Select"></td>
-    
-    </tr> 
-    <tr>
-      <td><input type="text" ng-model="new_keywordtranslation.Lesson_ID"></td>
-      <td><input type="text" ng-model="new_keywordtranslation.Title"></td>
-      <td><input type="text" ng-model="new_keywordtranslation.Keyword_ID"></td>
-      <td><input type="text" ng-model="new_keywordtranslation.Word"></td>
-      <td><input type="text" ng-model="new_keywordtranslation.Language_ID "></td>
-      <td><input type="text" ng-model="new_keywordtranslation.Translation_word"></td>
-      
-      
-      <td><input type="button" ng-click="createKeywordTranslation()" value="Create"></td>
+     
     
       </tr>
      

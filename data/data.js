@@ -102,9 +102,59 @@ exports.getY7EALStudent = function(Student_ID, callback) {
         callback(y7ealstudent);
     });
 };
+exports.getY8EALStudents = function(callback) {
+    // Create SQL statement
+    var sql = `SELECT * FROM EAL_Student where year_group = "Year 8" `;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var y8ealstudents = [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var ealStud = new student.Y7EALStudent(row.Student_ID, row.First_name, row.Surname, row.DOB, row.Email , row.Year_group, row.Language_ID, row.Photo);
+            // Add module to array
+            y8ealstudents.push(ealStud);
+        }
+        // Execute callback function
+        callback(y8ealstudents);
+    });
+};
+
+exports.getY8EALStudent = function(Student_ID, callback) {
+    // Create SQL statement
+    var sql = `SELECT * FROM EAL_Student where  year_group = "Year 8" and student_id = ${Student_ID}`;
+    // Execute query. Return all
+    db.get(sql, function(err, row) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var y8ealstudent = new student.Y7EALStudent(row.Student_ID, row.First_name, row.Surname, row.DOBDate, row.Email , row.Year_group, row.Language_ID,row.Photo);
+            // Add module to array
+         
+        // Execute callback function
+        callback(y8ealstudent);
+    });
+};
 
 
 
+exports.deleteEALStudent = function(Student_ID, callback) {
+
+    var sql = `DELETE FROM Eal_Student WHERE student_id = '${Student_ID}'` ;
+    // Execute query. Return all
+    db.exec(sql, function(err) {
+       
+      callback();
+    });
+};
+  
 
 
   exports.addEALStudent = function(ealstudent, callback) {
@@ -367,7 +417,7 @@ exports.getEsVariablesandObjects = function(callback) {
     and lesson_keyword.lesson_id =lesson.lesson_id
     and keyword_translation.keyword_id = lesson_keyword.keyword_id 
     and lesson.title ="Variables and Objects" 
-    and keyword_translation.language_id = "es" ;`;
+    and keyword_translation.language_id = "es" group by translation.Translation_word;`;
     // Execute query. Return all
     db.all(sql, function(err, rows) {
         // Check if error
@@ -399,7 +449,7 @@ exports.getEsOperators = function(callback) {
     and lesson_keyword.lesson_id =lesson.lesson_id
     and keyword_translation.keyword_id = lesson_keyword.keyword_id 
     and lesson.title ="Operators" 
-    and keyword_translation.language_id = "es" ;`;
+    and keyword_translation.language_id = "es" group by translation.Translation_word ;`;
     // Execute query. Return all
     db.all(sql, function(err, rows) {
         // Check if error
@@ -526,7 +576,7 @@ exports.getItVariablesandObjects = function(callback) {
     and lesson_keyword.lesson_id =lesson.lesson_id
     and keyword_translation.keyword_id = lesson_keyword.keyword_id 
     and lesson.title ="Variables and Objects" 
-    and keyword_translation.language_id = "it" ;`;
+    and keyword_translation.language_id = "it" group by translation.Translation_word ;`;
     // Execute query. Return all
     db.all(sql, function(err, rows) {
         // Check if error
@@ -558,7 +608,7 @@ exports.getItOperators = function(callback) {
     and lesson_keyword.lesson_id =lesson.lesson_id
     and keyword_translation.keyword_id = lesson_keyword.keyword_id 
     and lesson.title ="Operators" 
-    and keyword_translation.language_id = "it" ;`;
+    and keyword_translation.language_id = "it" group by translation.Translation_word;`;
     // Execute query. Return all
     db.all(sql, function(err, rows) {
         // Check if error
@@ -608,6 +658,39 @@ exports.getItCryptography = function(callback) {
         }
         // Execute callback function
         callback(itcrytographys);
+    });
+};
+
+exports.getEsCryptography = function(callback) {
+    // Create SQL statement
+    var sql = ` 
+    select lesson.Lesson_ID, lesson.Title,  keyword.Keyword_ID, keyword.Word, 
+    translation.Translation_word, language.Language_name 
+    FROM lesson, keyword, lesson_keyword, keyword_translation, translation, language 
+    where keyword.Keyword_ID=lesson_keyword.Keyword_ID 
+    and lesson.Lesson_ID = lesson_keyword.Lesson_ID 
+    and translation.Translation_ID = keyword_translation.Translation_ID 
+    and keyword.Keyword_ID = keyword_translation.Keyword_ID 
+    and language.Language_ID = keyword_translation.Language_ID 
+    and lesson.title = "Introduction to Cryptography" 
+    and keyword_translation.language_id = "es";`;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var escrytographys= [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var itcrypt = new student.ItCrytography(row.Lesson_ID, row.Title, row.Keyword_ID, row.Word, row.Translation_word, row.Language_name);
+            // Add module to array
+            escrytographys.push(itcrypt);
+        }
+        // Execute callback function
+        callback(escrytographys);
     });
 };
 

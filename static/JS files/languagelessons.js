@@ -1,6 +1,12 @@
 
       var mainApp = angular.module("mainApp", []);
-      
+     
+      mainApp.controller("itcryptographyController", function($scope, $http) {
+        $http.get("/itcryptographys").then(function(response) {
+          $scope.itcryptographys = response.data;
+        });  
+        });
+     
       
       mainApp.controller("esintrotogamesController", function($scope, $http) {
         $http.get("/esintrotogames").then(function(response) {
@@ -43,7 +49,7 @@ mainApp.controller("ititerationandselectionController", function($scope, $http) 
      $scope.ititerationandselections = response.data;
 }); });
     
-    var mainApp = angular.module("mainApp", []);
+    
    
    mainApp.controller("itcryptographyController", function($scope, $http) {
    $http.get("/itcryptographys").then(function(response) {
@@ -51,15 +57,11 @@ mainApp.controller("ititerationandselectionController", function($scope, $http) 
    });  
    });
 
+
    var mainApp = angular.module("mainApp", []);
-
-
-
-   mainApp.controller("itcryptographyController", function($scope, $http) {
-
- $http.get("/itcryptographys").then(function(response) {
-
-     $scope.itcryptographys = response.data;
+   mainApp.controller("escryptographyController", function($scope, $http) {
+ $http.get("/escryptographys").then(function(response) {
+    $scope.escryptographys = response.data;
 
    });  
 
