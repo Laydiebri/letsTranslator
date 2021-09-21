@@ -11,7 +11,7 @@
 
 #div-c{
     display: flex;
-    height: 750px;
+    height: 500px;
     width: 1450px; 
 }
 #div-c> div{
@@ -21,7 +21,7 @@
     margin: 10px;
     font-size: 30px;
     line-height: 100px;
-    height: 600px;
+    height: 400px;
 }
 .div-d{
     position:absolute;
@@ -52,7 +52,20 @@
     border: 10px solid greenyellow;
    
 }
-
+#div-g{
+    display: flex;
+    height: 750px;
+    width: 1450px; 
+}
+#div-g> div{
+   
+    color: green;
+    width: 100px;
+    margin: 10px;
+    font-size: 30px;
+    line-height: 100px;
+    height: 400px;
+}
 .btn-group button{
     background-color: greenyellow;
     border:3px solid black;

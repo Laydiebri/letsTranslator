@@ -111,7 +111,7 @@ exports.getY8EALStudents = function(callback) {
         if (err) {
             return console.error(err.message);
         }
-        // Create modules array
+        // Create empty array
         var y8ealstudents = [];
         // Loop through each row and create a module object
         for (var row of rows) {
@@ -142,6 +142,48 @@ exports.getY8EALStudent = function(Student_ID, callback) {
         callback(y8ealstudent);
     });
 };
+exports.getY9EALStudents = function(callback) {
+    // Create SQL statement
+    var sql = `SELECT * FROM EAL_Student where year_group = "Year 9" `;
+    // Execute query. Return all
+    db.all(sql, function(err, rows) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var y9ealstudents = [];
+        // Loop through each row and create a module object
+        for (var row of rows) {
+            // Create module object
+            var ealStud = new student.Y7EALStudent(row.Student_ID, row.First_name, row.Surname, row.DOB, row.Email , row.Year_group, row.Language_ID, row.Photo);
+            // Add module to array
+            y9ealstudents.push(ealStud);
+        }
+        // Execute callback function
+        callback(y9ealstudents);
+    });
+};
+
+exports.getY9EALStudent = function(Student_ID, callback) {
+    // Create SQL statement
+    var sql = `SELECT * FROM EAL_Student where  year_group = "Year 8" and student_id = ${Student_ID}`;
+    // Execute query. Return all
+    db.get(sql, function(err, row) {
+        // Check if error
+        if (err) {
+            return console.error(err.message);
+        }
+        // Create modules array
+        var y9ealstudent = new student.Y7EALStudent(row.Student_ID, row.First_name, row.Surname, row.DOBDate, row.Email , row.Year_group, row.Language_ID,row.Photo);
+            // Add module to array
+         
+        // Execute callback function
+        callback(y9ealstudent);
+    });
+};
+
+
 
 
 

@@ -152,6 +152,21 @@ app.get("/y8ealstudents/:Student_ID", function(req, res) {
   });
 });
 
+app.get("/y9ealstudents", function(req, res) {
+  // Call getModules on data
+  data.getY9EALStudents(function(y9ealstudents) {
+      res.json(y9ealstudents);
+  });
+});
+
+app.get("/y9ealstudents/:Student_ID", function(req, res) {
+  // Call getModules on data
+  data.getY9EALStudent(req.params.Student_ID,function(y9ealstudent) {
+      res.json(y9ealstudent);
+  });
+});
+
+
 app.delete("/ealstudents/:Student_ID", function(req, res) {
     // Call getSingalongs on data
     data.deleteEALStudent(req.params.Student_ID,function() {

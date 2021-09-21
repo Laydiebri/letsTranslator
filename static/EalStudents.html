@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
-    <title>Student Kodu Home</title>
+    <title>Students Home</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
     <script src="./JS files/admin.js"></script>
     <script src="student.js"></script>
@@ -373,6 +373,101 @@
 </div>
 </div>
 
+<div class = "page " data-page="2"> 
+  <div class="content"> 
+      <H1>Year 9</H1>
+
+<div ng-controller="y9ealstudentController">
+
+
+<table border=1>
+<tr>
+
+<th>Student ID</th>
+<th>First Name</th>
+<th>Surname</th>
+<th>DOB</th>
+<th>Email</th>
+<th>Year Group</th>
+<th>Language ID</th>
+
+<th>select</th>
+
+</tr>
+<tr ng-repeat = "y9ealstudent in y9ealstudents">
+
+<td>{{ y9ealstudent.Student_ID }}</td>
+<td>{{ y9ealstudent.First_name }}</td>
+<td>{{ y9ealstudent.Surname }}</td>
+<td>{{ y9ealstudent.DOB }}</td>
+<td>{{ y9ealstudent.Email }}</td>
+<td>{{ y9ealstudent.Year_group }}</td>
+<td>{{ y9ealstudent.Language_ID }}</td>
+
+
+
+<td><input type="button" ng-click="selectY9EALStudent(y9ealstudent.Student_ID)" value="Select"></td>
+
+</tr> 
+<tr>
+<td><input type="text" ng-model="new_y9ealstudent.Student_ID"></td>
+<td><input type="text" ng-model="new_y9ealstudent.First_name"></td>
+<td><input type="text" ng-model="new_y9ealstudent.Surname "></td>
+<td><input type="text" ng-model="new_y9ealstudent.DOB"></td>
+<td><input type="text" ng-model="new_y9ealstudent.Email"></td>
+<td><input type="text" ng-model="new_y9ealstudent.Year_group"></td>
+<td><input type="text" ng-model="new_y9ealstudent.Language_ID "></td>
+
+
+
+
+</tr>
+
+</table>
+<br>
+<br>
+
+
+
+<div id="selected">
+
+<table border=1>
+<tr>
+
+<th>Student ID</th>
+<th>First Name</th>
+<th>Surname</th>
+<th>Email</th>
+<th>Year Group</th>
+<th>Language ID</th>
+
+</tr>
+<tr>
+
+
+
+<td>{{ selectedY9EALStudent.Student_ID }}</td>
+<td>{{ selectedY9EALStudent.First_name }}</td>
+<td>{{ selectedY9EALStudent.Surname }}</td>
+<td>{{ selectedY9EALStudent.Email }}</td>
+<td>{{ selectedY9EALStudent.Year_group }}</td>
+<td>{{ selectedY9EALStudent.Language_ID }}</td>
+</tr>
+
+</table>
+
+<br>
+<br>
+
+<img src="{{selectedY9EALStudent.Photo}}" alt="student photo">
+
+
+
+</div>
+</div>
+
+</div>
+</div>
 
 
   </body>

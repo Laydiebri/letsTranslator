@@ -129,15 +129,15 @@ body{
         left: 35px;
         display: flex;
         height: 800px;
-        width: min-content;
+        height: max-content;
+        
+        
         
 }
 
 #flex-container1{
     display: flex;
-    width: max-content;
     left: 25px;
-    height: max-content;
     border-radius: 50px;
     border: 10px solid greenyellow;
     background-image: url("https://www.animatedimages.org/data/media/276/animated-school-image-0018.gif");
@@ -146,12 +146,12 @@ body{
    
    
    }
+
   
 #flex-container1> div{
    
     color: green;
-    width: max-content;
-    height:min-content;
+    
     margin: 5px;
     font-size: 20px;
    
@@ -162,7 +162,7 @@ body{
     color: black;
   margin-top: 70px;
     margin-bottom: 5px;
-    font-size: 30px;
+    font-size: 25px;
 }
 #flex-container1 h2{
     margin: auto;
@@ -209,7 +209,9 @@ body{
     align-self: center;
 }
 
-
+#Armando{
+    align-self: center;
+}
     
 #main-container{
     display: flex;
@@ -512,6 +514,19 @@ body{
     height: 50px;
     font-size: 15px;
     margin-left: 50px; 
+}
+.Logout8 button{
+    background-color: greenyellow;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    width: 50px;
+    display: block;
+    margin-bottom: -150px;
+    height: 50px;
+    font-size: 15px;
+    margin-left: 315px; 
 }
 .students{
     margin-left: auto;

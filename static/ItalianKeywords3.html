@@ -67,21 +67,17 @@ var mainApp = angular.module("mainApp", []);
                     <table border=1>
                         <tr>
                           
-                          <th>Lesson_ID</th>
-                          <th>Title</th>
-                          <th>Keyword</th>
+                       
                           <th>word</th>
-                          <th>Language</th>
+                         
                           <th>Translation_word</th>
                           
                         </tr>
                         <tr ng-repeat = "itoperator in itoperators">
                           
-                            <td>{{ itoperator.Lesson_ID }}</td>
-                            <td>{{ itoperator.Title }}</td>
-                            <td>{{ itoperator.Keyword_ID }}</td>
+                            
                             <td>{{ itoperator.Word }}</td>
-                            <td>{{ itoperator.Language_ID }}</td>
+                     
                             <td>{{ itoperator.Translation_word }}</td>
                         </tr>
                     

@@ -99,6 +99,28 @@ mainApp.controller("y8ealstudentController", function($scope, $http) {
     };
   
 });
+mainApp.controller("y9ealstudentController", function($scope, $http) {
+ 
+  document.getElementById("selected").style.display="none";
+    // Initially hides the "selected" element
+    
+
+    $http.get("/y9ealstudents").then(function(response) {
+        $scope.y9ealstudents = response.data;
+      });   
+
+     
+      $scope.selectY9EALStudent = function(Student_ID) {
+        // Get specific programme by code
+        $http.get("/y9ealstudents/" + Student_ID).then(function(response) {
+          $scope.selectedY9EALStudent = response.data;
+          document.getElementById("selected").style.display="block";
+          // Show the "selected" element
+         
+        });
+    };
+  
+});
   
   
    
