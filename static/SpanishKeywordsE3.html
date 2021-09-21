@@ -8,10 +8,9 @@
     <title>Keywords</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
     <link rel = "stylesheet" href="./CSS files/home.css">
-    <link rel = "stylesheet" href="./CSS files/Choices.css"
+    <link rel = "stylesheet" href="./CSS files/Choices.css">
     <script src="./JS files/home.js"></script>
     <script src="./JS files/languagelessons.js"></script>
-   
     
     <script src="student.js"></script>
 
@@ -30,13 +29,13 @@
 
       <button class ="button3" onclick="goBack()">Back</button>
       <button class ="button3" onclick="document.location='Homepage.html'">Home</button>
+     
 </div>
 <hr style="height: 17px; width: 1500px; background-color:yellow;"/>
   
   </header>
   <body ng-app="mainApp">
 
-    
       <div id="flex-container">
         <div style="flex-basis: 245px"; id="Atlas">
         
@@ -51,51 +50,73 @@
              
           <div class="vl">
             <div class="div-e">
+                
+            
+              
               <div class ="main-heading">
                
-                  <H1>El cifrado César</H1>
+                  <H1>Aseo en línea</H1>
                   
-                  <div ng-controller="escryptographyController">
+                  <div ng-controller="esesafteyposterController">
 
+    
 
-
-
-
+    
                     <table class = "center" border=1>
-                
+
                         <tr>
-                
+
                           
-                
-                         
-                
+
+                          <th>Lesson</th>
+
+                          <th>Title</th>
+
+                          <th>Keyword Id</th>
+
                           <th>Keyword</th>
-                
-                          
-                
+
+                          <th>Language</th>
+
                           <th>Translation</th>
-                
+
+                   
+
                         </tr>
-      
+
+                
+
                         <br>
-                
+
                         <br>
-                
-                        <tr ng-repeat = "escryptography in escryptographys">
-                
+
+                        <tr ng-repeat = "esesafteyposter in esesafteyposters">
+
                           
-                
-                
-                          <td>{{ escryptography.Word }}</td>
-                
-                         
-                
-                          <td>{{ escryptography.Translation_word }}</td>
-                
+
+                          <td>{{ esesafteyposter.Lesson_ID }}</td>
+
+                          <td>{{ esesafteyposter.Title }}</td>
+
+                          <td>{{ esesafteyposter.Keyword_ID }}</td>
+
+                          <td>{{ esesafteyposterr.Word }}</td>
+
+                          <td>{{ esesafteyposter.Language_name }}</td>
+
+                          <td>{{ esesafteyposter.Translation_word }}</td>
+
+                  
+
                         </tr> 
-                        
-                      </table>
-                  </div>
+
+    
+
+                        </table>
+
+                  
+                    </div>
+                    
                 </div>
                 <div class ="Logout4"><button type="button" onclick="document.location='Homepage.html'">Logout</button></div>
             
