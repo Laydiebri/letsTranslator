@@ -63,28 +63,85 @@
 
               <div class ="main-heading">
                
-                  <H1>Introduciendo Variables</H1>
+                  <H1>Iiteración y selección</H1>
                   
-                  <div ng-controller="itvariablesandobjectsController">
+                  <div ng-controller="esititerationandselectionsController">
 
 
-                    <table class = "center" border=1>
+
+
+
+                    <table border=1>
+                
                         <tr>
+                
                           
-                         
-                          <th>word</th>
-                         
-                          <th>Translation_word</th>
+                
+                          <th>Lesson</th>
+                
+                          <th>Title</th>
+                
+                          <th>Keyword Id</th>
+                
+                          <th>Keyword</th>
+                
+                          <th>Language</th>
+                
+                          <th>Translation</th>
+                
                           
+                
+                        
+                
+                         
+                
+                          
+                
+                          
+                
+                          
+                
                         </tr>
-                        <tr ng-repeat = "itvariablesandobject in itvariablesandobjects">
+                
+                
+                
+                        <br>
+                
+                        <br>
+                
+                        <tr ng-repeat = "esiterationandselection in esititerationandselectionsController">
+                
                           
-                            <td>{{ itvariablesandobject.Word }}</td>
+                
+                          <td>{{ esititerationandselections.Lesson_ID }}</td>
+                
+                          <td>{{ esititerationandselections.Title }}</td>
+                
+                          <td>{{ esititerationandselections.Keyword_ID }}</td>
+                
+                          <td>{{ esititerationandselections.Word }}</td>
+                
+                          <td>{{ esititerationandselections.Language_name }}</td>
+                
+                          <td>{{ esititerationandselections.Translation_word }}</td>
+                
+                          
+                
+                          
+                
+                          
+                
+                        
+                
+                        </tr> 
+                
+                       
+                
                          
-                            <td>{{ itvariablesandobject.Translation_word }}</td>
-                        </tr>
-                    
-                        </table>
+                
+                      </table>
+                
+                
                     </div>
                     <br>
                   <br>
