@@ -14,6 +14,17 @@
     
     <script src="student.js"></script>
 
+    <script>
+
+      var mainApp = angular.module("mainApp", []);
+      mainApp.controller("itvariablesandobjectsController", function($scope, $http) {
+     $http.get("/itvariablesandobjects").then(function(response) {
+     $scope.itvariablesandobjects = response.data;
+}); }); 
+            
+          </script>
+      
+
   </head>
 
   <header>
@@ -36,80 +47,47 @@
   </header>
   <body ng-app="mainApp">
 
-      <div id="flex-container">
-        <div style="flex-basis: 245px"; id="Atlas">
-        
-          <div class ="btn-group2">
+    <div id="flex-container">
+      <div style="flex-basis: 245px"; id="Atlas">
+      <div class ="btn-group2">
 
-            <button></button>
-            <button></button>
-            <button></button>
-          </div>
-          </div>
-          
-             
-          <div class="vl">
-            <div class="div-e">
-                
-            
-              
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+      </div>
+      
+         
+      <div class="vl">
+        <div class="div-e">
+
               <div class ="main-heading">
                
-                  <H1>Póster de seguridad electrónica</H1>
+                  <H1>Introduciendo Variables</H1>
                   
-                  <div ng-controller="esesafteyposterController">
+                  <div ng-controller="itvariablesandobjectsController">
 
-    
 
-    
                     <table class = "center" border=1>
-
                         <tr>
-
                           
-
-                       
-
-                          <th>Keyword</th>
-
+                         
+                          <th>word</th>
+                         
+                          <th>Translation_word</th>
                           
-
-                          <th>Translation</th>
-
-                   
-
                         </tr>
-
-                
-
-                        <br>
-
-                        <br>
-
-                        <tr ng-repeat = "esesafteyposter in esesafteyposters">
-
+                        <tr ng-repeat = "itvariablesandobject in itvariablesandobjects">
                           
-
-         
-
-                          <td>{{ esesafteyposter.Word }}</td>
-
-     
-
-                          <td>{{ esesafteyposter.Translation_word }}</td>
-
-                  
-
-                        </tr> 
-
-    
-
-                        </table>
-
-                  
-                    </div>
+                            <td>{{ itvariablesandobject.Word }}</td>
+                         
+                            <td>{{ itvariablesandobject.Translation_word }}</td>
+                        </tr>
                     
-                </div>
+                        </table>
+                    </div>
+                    <br>
+                  <br>
                 <div class ="Logout4"><button type="button" onclick="document.location='Homepage.html'">Logout</button></div>
             
         </div>

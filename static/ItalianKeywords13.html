@@ -35,6 +35,18 @@
   
   </header>
   <body ng-app="mainApp">
+      <script>
+
+mainApp.controller("itifelseconditionController", function($scope, $http) {
+
+$http.get("/itifelseconditions").then(function(response) {
+
+    $scope.itifelseconditions = response.data;
+
+  });   
+
+});
+      </script>
 
       <div id="flex-container">
         <div style="flex-basis: 245px"; id="Atlas">
@@ -50,61 +62,39 @@
              
           <div class="vl">
             <div class="div-e">
-                
+              
             
               
               <div class ="main-heading">
                
-                  <H1>Póster de seguridad electrónica</H1>
+                  <H1>Se altro affermazioni</H1>
                   
-                  <div ng-controller="esesafteyposterController">
-
-    
-
-    
-                    <table class = "center" border=1>
-
-                        <tr>
-
-                          
-
-                       
-
-                          <th>Keyword</th>
-
-                          
-
-                          <th>Translation</th>
-
-                   
-
-                        </tr>
-
-                
-
-                        <br>
-
-                        <br>
-
-                        <tr ng-repeat = "esesafteyposter in esesafteyposters">
-
-                          
-
-         
-
-                          <td>{{ esesafteyposter.Word }}</td>
-
-     
-
-                          <td>{{ esesafteyposter.Translation_word }}</td>
-
                   
 
-                        </tr> 
+                  <tr ng-repeat = " itifelsecondition in  itifelseconditions">
 
-    
+                                  
 
-                        </table>
+                    <td>{{ itifelsecondition.Lesson_ID }}</td>
+
+                    <td>{{ itifelsecondition.Title }}</td>
+
+                    <td>{{ itifelsecondition.Keyword_ID }}</td>
+
+                    <td>{{ itifelsecondition.Word }}</td>
+
+                    <td>{{ itifelsecondition.Language_name }}</td>
+
+                    <td>{{ itifelsecondition.Translation_word }}</td>
+
+            
+
+                  </tr> 
+
+            
+
+                </table>
+
 
                   
                     </div>

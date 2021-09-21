@@ -115,23 +115,7 @@ mainApp.controller("ititerationandselectionController", function($scope, $http) 
 
  }); 
 
-
-
-
-
-
-
-
-
- mainApp.controller("itifelseconditionController", function($scope, $http) {
-
- $http.get("/itifelseconditions").then(function(response) {
-
-     $scope.itifelseconditions = response.data;
-
-   });   
-
- }); 
+ 
 
  mainApp.controller("esifelseconditionController", function($scope, $http) {
 
