@@ -68,22 +68,45 @@ $http.get("/itifelseconditions").then(function(response) {
               <div class ="main-heading">
                
                   <H1>Se altro affermazioni</H1>
-                  
+               
+   
+                  <div ng-controller="itifelseconditionController">
                   
 
-                  <tr ng-repeat = " itifelsecondition in  itifelseconditions">
 
+                    <table class="center" border=1>
+
+                      <tr>
+              
+                        
+              
+                     
+              
+                        <th>Keyword</th>
+              
+                      
+              
+                        <th>Translation</th>
+
+                        
+              
+                      </tr>
+              
+              
+              
+                      <br>
+              
+                      <br>
+              
+                      <tr ng-repeat = " itifelsecondition in  itifelseconditions">
+              
+                        
                                   
 
-                    <td>{{ itifelsecondition.Lesson_ID }}</td>
-
-                    <td>{{ itifelsecondition.Title }}</td>
-
-                    <td>{{ itifelsecondition.Keyword_ID }}</td>
+                 
 
                     <td>{{ itifelsecondition.Word }}</td>
 
-                    <td>{{ itifelsecondition.Language_name }}</td>
 
                     <td>{{ itifelsecondition.Translation_word }}</td>
 

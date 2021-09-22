@@ -46,7 +46,13 @@
   
   </header>
   <body ng-app="mainApp">
+<script>
 
+mainApp.controller("ititerationandselectionController", function($scope, $http) {
+     $http.get("/ititerationandselections").then(function(response) {
+     $scope.ititerationandselections = response.data;
+}); });
+</script>
     <div id="flex-container">
       <div style="flex-basis: 245px"; id="Atlas">
       <div class ="btn-group2">
@@ -63,7 +69,7 @@
 
               <div class ="main-heading">
                
-                  <H1>Iterazione e selezione</H1>
+                  <H1>L'introduzione di variabile</H1>
                   
                   <div ng-controller="itvariablesandobjectsController">
 

@@ -148,3 +148,20 @@ table.center{
 }
 
 
+#flex-container2{
+
+    float: left;
+    border-radius: 50px;
+    border: 10px solid greenyellow;
+    width: 20%;
+
+   }
+   
+   #flex-container3{
+
+    float: left;
+    border-radius: 50px;
+    border: 10px solid greenyellow;
+    width: 60%;
+    height: 50%;
+   }

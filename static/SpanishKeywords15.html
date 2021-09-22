@@ -17,10 +17,10 @@
     <script>
 
       var mainApp = angular.module("mainApp", []);
-      mainApp.controller("itvariablesandobjectsController", function($scope, $http) {
-     $http.get("/itvariablesandobjects").then(function(response) {
-     $scope.itvariablesandobjects = response.data;
-}); }); 
+      mainApp.controller("esiterationandselectionController", function($scope, $http) {
+        $http.get("/esiterationandselections").then(function(response) {
+        $scope.esiterationandselections = response.data;
+   }); });
             
           </script>
       
@@ -65,7 +65,7 @@
                
                   <H1>Iiteración y selección</H1>
                   
-                  <div ng-controller="esititerationandselectionsController">
+                  <div ng-controller="esiterationandselectionController">
 
 
 
@@ -109,21 +109,21 @@
                 
                         <br>
                 
-                        <tr ng-repeat = "esiterationandselection in esititerationandselectionsController">
+                        <tr ng-repeat = "esiterationandselection in esiterationandselectionController">
                 
                           
                 
-                          <td>{{ esititerationandselections.Lesson_ID }}</td>
+                          <td>{{ esiterationandselection.Lesson_ID }}</td>
                 
-                          <td>{{ esititerationandselections.Title }}</td>
+                          <td>{{ esiterationandselection.Title }}</td>
                 
-                          <td>{{ esititerationandselections.Keyword_ID }}</td>
+                          <td>{{ esiterationandselection.Keyword_ID }}</td>
                 
-                          <td>{{ esititerationandselections.Word }}</td>
+                          <td>{{ esiterationandselection.Word }}</td>
                 
-                          <td>{{ esititerationandselections.Language_name }}</td>
+                          <td>{{ esiterationandselection.Language_name }}</td>
                 
-                          <td>{{ esititerationandselections.Translation_word }}</td>
+                          <td>{{ esiterationandselection.Translation_word }}</td>
                 
                           
                 

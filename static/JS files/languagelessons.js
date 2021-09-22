@@ -23,10 +23,7 @@
         $scope.esoperators = response.data;
    }); });
    
-   mainApp.controller("esiterationandselectionController", function($scope, $http) {
-        $http.get("/esiterationandselections").then(function(response) {
-        $scope.esiterationandselections = response.data;
-   }); });
+  
    
 
    mainApp.controller("itintrotogamesController", function($scope, $http) {
@@ -44,10 +41,7 @@ mainApp.controller("itoperatorsController", function($scope, $http) {
      $scope.itoperators = response.data;
 }); });
 
-mainApp.controller("ititerationandselectionController", function($scope, $http) {
-     $http.get("/ititerationandselections").then(function(response) {
-     $scope.ititerationandselections = response.data;
-}); });
+
     
     
    
